@@ -1,0 +1,77 @@
+---
+title: Paper Review
+authors:
+  - name: Shauna Heron
+    affiliation: Laurentian University
+    roles: writing
+    corresponding: true
+bibliography: references.bib
+---
+
+```{r}
+library(tidyverse)
+library(usethis)
+
+```
+
+The main goal of your review is to **convey the core ideas and key findings presented in the paper**.
+
+Instead of focusing on intricate technical details, **your emphasis should be on summarizing the most important concepts in a straightforward and accessible way, highlighting the paper's major contributions**.
+
+## **Introduction**
+
+This review analyzes the study by Garriga et al. (2023), published in *Cell Medical*, titled *"Combining Clinical Notes with Structured Electronic Health Records Enhances the Prediction of Mental Health Crises."* The research investigates the utility of combining unstructured clinical notes with structured data from electronic mental health records (EMHR) to improve the prediction of mental health crises.
+
+While leveraging EHRs to bolster clinical decision-making is not new, previous work has mainly focused on predicting specific events like suicide attempts or substance relapse–representing only a small subset of mental health demand. In @garriga2023 earlier paper, they demonstrated the added value of continuous prediction of mental health crises with structured data, but in this paper they take their work further to examine the relatively unexplored power of utilizing clinical notes which typically dominate in terms of volumne when compared to structured data.
+
+The relevance of @garriga2023 study is underscored by an alarming rise in mental health-related hospitalizations coinciding with significant resource and workforce challenges. Recent data highlights that hospitalizations for mental health conditions, particularly among youth in Ontario, have surged since the COVID-19 pandemic. Mental health crises requiring hospitalization (e.g., emotional breakdowns, substance overdoses and suicide attempts) have increased \_\_-fold. What's worse, many of these crises might have been prevented with early intervention. However a lack of predictive tools has made it difficult for healthcare systems to anticipate and address these crises before they peak.
+
+Electronic health records are characterized
+
+### 2. **Summary of the Paper**
+
+-   **Problem Statement**: What is the problem the paper is addressing? Why is it important?
+
+-   **Objectives**: What are the research goals or questions the authors aim to solve?
+
+-   **Methodology**: Provide a concise explanation of the methods, models, or algorithms used. Highlight any novel techniques introduced by the paper.
+
+-   **Key Results**: Summarize the main findings, such as model performance (accuracy, precision, recall, etc.), any benchmarks used, and comparisons with previous approaches.
+
+### 3. **Evaluation of Strengths**
+
+-   **Novelty**: Discuss what’s new about the approach or findings. How does it advance the field?
+
+-   **Technical Merit**: Comment on the soundness of the methods used. Were they appropriate and well-executed?
+
+-   **Experiments and Results**: Were the experiments well-designed? Is the evaluation thorough? Consider whether the results support the authors' claims and if the comparisons with existing work are fair.
+
+-   **Clarity and Presentation**: Evaluate the clarity of the writing, structure, and presentation of data (figures, tables). Was the paper easy to understand?
+
+### 4. **Critique of Weaknesses**
+
+-   **Limitations in Approach**: Identify any limitations in the methodology or approach. Were there assumptions that might limit the generalizability of the results?
+
+-   **Experimental Design Flaws**: Are there any issues with how the experiments were conducted? For example, is the dataset too small, or does it lack diversity?
+
+-   **Missing Comparisons**: Discuss any relevant models or methods that should have been compared but were not.
+
+-   **Interpretation of Results**: Were there any instances where the authors overstate their results? Is there a lack of robustness or overfitting in the model?
+
+### 5. **Context and Impact on the Field**
+
+-   **Influence on Research**: Comment on how this paper has influenced subsequent work in deep learning. Has it been widely cited or used in practical applications?
+
+-   **Relation to Other Works**: How does this paper relate to other notable works in the field? Does it build upon, refute, or complement existing research?
+
+### 6. **Future Directions**
+
+-   **Suggestions for Improvement**: Propose areas for further exploration or how the work could be improved. Are there any new technologies or datasets that could enhance this research?
+
+-   **Potential Research Questions**: Based on the paper, suggest new questions or challenges that the field still needs to address.
+
+### 7. **Conclusion**
+
+-   **Summary of Key Points**: Recap the main strengths and weaknesses of the paper.
+
+-   **Final Verdict**: Offer your overall assessment of the paper’s contribution to deep learning. Was it a landmark paper, or does it have limitations that should be addressed?
