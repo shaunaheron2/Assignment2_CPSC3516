@@ -53,6 +53,9 @@ div.csl-indent {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -114,14 +117,12 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><strong>Introduction</strong></a>
+  <li><a href="#introduction-and-motivation" id="toc-introduction-and-motivation" class="nav-link active" data-scroll-target="#introduction-and-motivation"><strong>Introduction and Motivation</strong></a>
   <ul class="collapse">
-  <li><a href="#summary-of-the-paper" id="toc-summary-of-the-paper" class="nav-link" data-scroll-target="#summary-of-the-paper">2. <strong>Summary of the Paper</strong></a></li>
-  <li><a href="#evaluation-of-strengths" id="toc-evaluation-of-strengths" class="nav-link" data-scroll-target="#evaluation-of-strengths">3. <strong>Evaluation of Strengths</strong></a></li>
-  <li><a href="#critique-of-weaknesses" id="toc-critique-of-weaknesses" class="nav-link" data-scroll-target="#critique-of-weaknesses">4. <strong>Critique of Weaknesses</strong></a></li>
-  <li><a href="#context-and-impact-on-the-field" id="toc-context-and-impact-on-the-field" class="nav-link" data-scroll-target="#context-and-impact-on-the-field">5. <strong>Context and Impact on the Field</strong></a></li>
-  <li><a href="#future-directions" id="toc-future-directions" class="nav-link" data-scroll-target="#future-directions">6. <strong>Future Directions</strong></a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">7. <strong>Conclusion</strong></a></li>
+  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem Statement</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><strong>Solution</strong></a></li>
+  <li><a href="#experimental-results" id="toc-experimental-results" class="nav-link" data-scroll-target="#experimental-results"><strong>Experimental Results</strong></a></li>
+  <li><a href="#conclusions-and-further-work" id="toc-conclusions-and-further-work" class="nav-link" data-scroll-target="#conclusions-and-further-work"><strong>Conclusions and Further Work:</strong></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -135,60 +136,50 @@ div.csl-indent {
   
 
 
-<p>The main goal of your review is to <strong>convey the core ideas and key findings presented in the paper</strong>.</p>
-<p>Instead of focusing on intricate technical details, <strong>your emphasis should be on summarizing the most important concepts in a straightforward and accessible way, highlighting the paper’s major contributions</strong>.</p>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction"><strong>Introduction</strong></h2>
-<p>This review analyzes the study by Garriga et al.&nbsp;(2023), published in <em>Cell Medical</em>, titled <em>“Combining Clinical Notes with Structured Electronic Health Records Enhances the Prediction of Mental Health Crises.”</em> The research investigates the utility of combining unstructured clinical notes with structured data from electronic mental health records (EMHR) to improve the prediction of mental health crises.</p>
-<p>While leveraging EHRs to bolster clinical decision-making is not new, previous work has mainly focused on predicting specific events like suicide attempts or substance relapse–representing only a small subset of mental health demand. In <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> earlier paper, they demonstrated the added value of continuous prediction of mental health crises with structured data, but in this paper they take their work further to examine the relatively unexplored power of utilizing clinical notes which typically dominate in terms of volumne when compared to structured data.</p>
-<p>The relevance of <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> study is underscored by an alarming rise in mental health-related hospitalizations coinciding with significant resource and workforce challenges. Recent data highlights that hospitalizations for mental health conditions, particularly among youth in Ontario, have surged since the COVID-19 pandemic. Mental health crises requiring hospitalization (e.g., emotional breakdowns, substance overdoses and suicide attempts) have increased __-fold. What’s worse, many of these crises might have been prevented with early intervention. However a lack of predictive tools has made it difficult for healthcare systems to anticipate and address these crises before they peak.</p>
-<p>Electronic health records are characterized</p>
-<section id="summary-of-the-paper" class="level3">
-<h3 class="anchored" data-anchor-id="summary-of-the-paper">2. <strong>Summary of the Paper</strong></h3>
+<section id="introduction-and-motivation" class="level1">
+<h1><strong>Introduction and Motivation</strong></h1>
+<p>This review analyzes the study by Garriga et al.&nbsp;(2023), published in <em>Cell Medical</em>, titled <em>“Combining Clinical Notes with Structured Electronic Health Records Enhances the Prediction of Mental Health Crises.”</em> The research investigates the utility of combining unstructured clinical notes with structured data from electronic mental health records (EMHR) to improve the prediction of mental health crises. The relevance of <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> study is underscored by an alarming rise in mental health-related hospitalizations coinciding with significant resource and workforce challenges. Recent data highlights that hospitalizations for mental health conditions, particularly among youth in Ontario, have surged since the COVID-19 pandemic. Mental health crises requiring hospitalization (e.g., emotional breakdowns, substance overdoses and suicide attempts) have increased __-fold. What’s worse, many of these crises might have been prevented with early intervention. However a lack of predictive tools has made it difficult for healthcare systems to anticipate and address these crises before they peak.</p>
+<p>Leveraging Electronic Health Records (EHRs) to bolster clinical decision-making is not new, as clinicians and researchers have long utilized structured data like diagnosis codes, lab results, and medication records, to inform predictive models and treatment strategies. However, due to computational restraints and …. , unstructured data like clinical notes and other free-form text and imagery until recently has been left largely untapped. Considering this form of data constitutes a substantial portion of EHRs in terms of volume and contains critical narrative information like clinician observations, patient-reported symptoms, and contextual details surrounding patient interactions that structured data might lack, by incorporating this textual data into predictive models…..</p>
+<section id="problem-statement" class="level2">
+<h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
+<p>When a patient is admitted to acute care with a mental crisis a mix of information is collected. The structured component of EHRs contain discrete variables like gender, diagnoses, and school district as well as continuous variables like standardized assessment scores, administrative counts, like number of visits, hours of service and missed appointment counts. EHRs also contain time data like intake dates, discharge date and assessment dates.</p>
+<p>While structured data is often easier to process–though even it is known to be notoriously unwieldy in terms of sparseness, missing values, nested features and high multicollinearity–they do not provide the complete clinical context of a patient. Research shows that bolstering structured data with qualitative, unstructured sources can improve cohort identifiaction as well as the prediction accuracy of hospital readmission and suicide attempts. Futhermore, unlike in cardivascular disorders where objective measurements of blood pressure or plasma workups can be stored in structured EHRs, mental health assessments are highly subjective and often the bulk of important information about patient health is stored under clinical observations in the clinical notes. For this reason, understanding how these data predict clinitical events is essential to fully leverage the breadth and depth of information contained in EHRs.</p>
+<p>The main challenge posed by these data is the clinical reality that the information contained in any one EHR will vary significantly from patient to patient. Moreover, idosyncricies relating to differences in how clinicians differ in style and clinical opinion mean that the volume, quality and availability of clinical notes is highly inconsistent. Moreoever, the volume of notes is usually directly related with the severity and frequency of the patients mental health crises, which means that those with more severe or recurrent episodes will have a greater volume of clinical notes, making it a more difficult task to predict crises in new patients without a long history.</p>
+<p>The primary objective of the study was to predict mental health crises utilizing both structured and unstructured mental health data.</p>
+<p>Structed data is composed of a mix of data like clinical notes, discharge reports or even correspondance with clients such as text messages). While structured data is easier to process–</p>
 <ul>
-<li><p><strong>Problem Statement</strong>: What is the problem the paper is addressing? Why is it important?</p></li>
-<li><p><strong>Objectives</strong>: What are the research goals or questions the authors aim to solve?</p></li>
-<li><p><strong>Methodology</strong>: Provide a concise explanation of the methods, models, or algorithms used. Highlight any novel techniques introduced by the paper.</p></li>
-<li><p><strong>Key Results</strong>: Summarize the main findings, such as model performance (accuracy, precision, recall, etc.), any benchmarks used, and comparisons with previous approaches.</p></li>
+<li><strong>Using an example to illustrate the problem can be particularly effective.</strong></li>
+</ul>
+<p>To this end, the authors</p>
+</section>
+<section id="solution" class="level2">
+<h2 class="anchored" data-anchor-id="solution"><strong>Solution</strong></h2>
+<ul>
+<li><p>Detail the paper’s <strong>significant contribution to the subject.</strong></p></li>
+<li><p>Describe the proposed solution in depth.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/paste-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Includes all five trained models and the types of data used as input. Struct XGB is an XGBoost model and the rest feed forward neural networks with ensemble DNN combining the results of a neural network trained on structured data only and a neural network trained on both structured and unstructured data."><img src="images/paste-1.png" class="img-fluid figure-img" alt="Includes all five trained models and the types of data used as input. Struct XGB is an XGBoost model and the rest feed forward neural networks with ensemble DNN combining the results of a neural network trained on structured data only and a neural network trained on both structured and unstructured data."></a></p>
+<figcaption>Includes all five trained models and the types of data used as input. Struct XGB is an XGBoost model and the rest feed forward neural networks with ensemble DNN combining the results of a neural network trained on structured data only and a neural network trained on both structured and unstructured data.</figcaption>
+</figure>
+</div>
+<ul>
+<li>Contrast the presented solution with other existing methods, focusing on its advantages and disadvantages. Reflect on what we’ve studied in class, making connections where relevant.</li>
 </ul>
 </section>
-<section id="evaluation-of-strengths" class="level3">
-<h3 class="anchored" data-anchor-id="evaluation-of-strengths">3. <strong>Evaluation of Strengths</strong></h3>
+<section id="experimental-results" class="level2">
+<h2 class="anchored" data-anchor-id="experimental-results"><strong>Experimental Results</strong></h2>
 <ul>
-<li><p><strong>Novelty</strong>: Discuss what’s new about the approach or findings. How does it advance the field?</p></li>
-<li><p><strong>Technical Merit</strong>: Comment on the soundness of the methods used. Were they appropriate and well-executed?</p></li>
-<li><p><strong>Experiments and Results</strong>: Were the experiments well-designed? Is the evaluation thorough? Consider whether the results support the authors’ claims and if the comparisons with existing work are fair.</p></li>
-<li><p><strong>Clarity and Presentation</strong>: Evaluate the clarity of the writing, structure, and presentation of data (figures, tables). Was the paper easy to understand?</p></li>
+<li><p><strong>Identify the platform or medium employed (e.g., simulation, robot, or experimental setup).</strong></p></li>
+<li><p><strong>Provide an in-depth analysis of the performance results, and feel free to include diagrams or data directly from the paper.</strong></p></li>
+<li><p><strong>For papers focused on theory, clearly explain the fundamental theoretical concepts. Address improvements in metrics such as accuracy, efficiency, and other relevant benchmarks.</strong></p></li>
 </ul>
 </section>
-<section id="critique-of-weaknesses" class="level3">
-<h3 class="anchored" data-anchor-id="critique-of-weaknesses">4. <strong>Critique of Weaknesses</strong></h3>
+<section id="conclusions-and-further-work" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions-and-further-work"><strong>Conclusions and Further Work:</strong></h2>
 <ul>
-<li><p><strong>Limitations in Approach</strong>: Identify any limitations in the methodology or approach. Were there assumptions that might limit the generalizability of the results?</p></li>
-<li><p><strong>Experimental Design Flaws</strong>: Are there any issues with how the experiments were conducted? For example, is the dataset too small, or does it lack diversity?</p></li>
-<li><p><strong>Missing Comparisons</strong>: Discuss any relevant models or methods that should have been compared but were not.</p></li>
-<li><p><strong>Interpretation of Results</strong>: Were there any instances where the authors overstate their results? Is there a lack of robustness or overfitting in the model?</p></li>
-</ul>
-</section>
-<section id="context-and-impact-on-the-field" class="level3">
-<h3 class="anchored" data-anchor-id="context-and-impact-on-the-field">5. <strong>Context and Impact on the Field</strong></h3>
-<ul>
-<li><p><strong>Influence on Research</strong>: Comment on how this paper has influenced subsequent work in deep learning. Has it been widely cited or used in practical applications?</p></li>
-<li><p><strong>Relation to Other Works</strong>: How does this paper relate to other notable works in the field? Does it build upon, refute, or complement existing research?</p></li>
-</ul>
-</section>
-<section id="future-directions" class="level3">
-<h3 class="anchored" data-anchor-id="future-directions">6. <strong>Future Directions</strong></h3>
-<ul>
-<li><p><strong>Suggestions for Improvement</strong>: Propose areas for further exploration or how the work could be improved. Are there any new technologies or datasets that could enhance this research?</p></li>
-<li><p><strong>Potential Research Questions</strong>: Based on the paper, suggest new questions or challenges that the field still needs to address.</p></li>
-</ul>
-</section>
-<section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion">7. <strong>Conclusion</strong></h3>
-<ul>
-<li><p><strong>Summary of Key Points</strong>: Recap the main strengths and weaknesses of the paper.</p></li>
-<li><p><strong>Final Verdict</strong>: Offer your overall assessment of the paper’s contribution to deep learning. Was it a landmark paper, or does it have limitations that should be addressed?</p></li>
+<li><strong>Summarize the paper’s key takeaways and suggest potential areas for future research or exploration.</strong></li>
 </ul>
 
 </section>
@@ -621,6 +612,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
