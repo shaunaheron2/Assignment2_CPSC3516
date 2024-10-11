@@ -6,5 +6,10 @@
     "index-preview.html": "0183fd6f",
     "index.typ": "eea010c6",
     "index.tex": "c8a415a0"
+  },
+  "Presentation-1.qmd": {
+    "Presentation-1-preview.html": "e5f0bff9",
+    "Presentation-1.embed.ipynb": "ea134ab0",
+    "Presentation-1.out.ipynb": "8ec55f97"
   }
 }

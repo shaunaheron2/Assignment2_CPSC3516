@@ -1,48 +1,117 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.5.57">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>Paper Review</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
+    <title>Untitled</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+    </style>
+
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
+
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
+
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const titleBannerEl = window.document.querySelector("body > #title-block-header");
+      if (titleBannerEl) {
+        titleBannerEl.style.paddingTop = header.clientHeight + "px";
+      }
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = "index.html";
+            }
+        }, 100);
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
+    
+<script src="site_libs/manuscript-notebook/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -56,55 +125,42 @@ div.csl-indent {
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<script async="" src="https://hypothes.is/embed.js"></script>
+     <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
     document.body.classList.add('hypothesis-enabled');
   });
-</script>
+</script>  
+      </head>
 
+  <body class="quarto-notebook">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      
+      <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6><i class="bi bi-journal-code"></i> Untitled</h6>
 
-<meta name="citation_title" content="Paper Review">
-<meta name="citation_author" content="Shauna Heron">
-<meta name="citation_language" content="en">
-<meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_publication_date=1984-05;,citation_cover_date=1984-05;,citation_year=1984;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_issue=2;,citation_doi=10.1093/comjnl/27.2.97;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;,citation_publisher=Oxford University Press, Inc.;">
-<meta name="citation_reference" content="citation_title=Combining clinical notes with structured electronic health records enhances the prediction of mental health crises;,citation_author=Roger Garriga;,citation_author=Teodora Sandra Buda;,citation_author=João Guerreiro;,citation_author=Jesús Omaña Iglesias;,citation_author=Iñaki Estella Aguerri;,citation_author=Aleksandar Matić;,citation_publication_date=2023-11-21;,citation_cover_date=2023-11-21;,citation_year=2023;,citation_fulltext_html_url=https://www.cell.com/cell-reports-medicine/abstract/S2666-3791(23)00437-8;,citation_issue=11;,citation_doi=10.1016/j.xcrm.2023.101260;,citation_volume=4;,citation_language=en-US;,citation_journal_title=Cell Reports Medicine;">
-</head>
+            <a href="./Presentation-1.qmd" class="btn btn-primary quarto-download-embed" download="Presentation-1.qmd">Download Source</a>
+          </div>
 
-<body>
-
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Paper Review</h1>
+      <h1 class="title">Untitled</h1>
           </div>
 
     
     <div class="quarto-title-meta-container">
       <div class="quarto-title-meta-column-start">
-            <div class="quarto-title-meta-author">
-          <div class="quarto-title-meta-heading">Author</div>
-          <div class="quarto-title-meta-heading">Affiliation</div>
-          
-                <div class="quarto-title-meta-contents">
-            <p class="author">Shauna Heron </p>
-          </div>
-                <div class="quarto-title-meta-contents">
-                    <p class="affiliation">
-                        Laurentian University
-                      </p>
-                  </div>
-                    </div>
         
         <div class="quarto-title-meta">
 
-                      
+                
           
                 
               </div>
       </div>
       <div class="quarto-title-meta-column-end quarto-other-formats-target">
-      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></p></div></div></div>
+      </div>
     </div>
 
 
@@ -113,98 +169,16 @@ div.csl-indent {
     </div>  </div>
 </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction-and-motivation" id="toc-introduction-and-motivation" class="nav-link active" data-scroll-target="#introduction-and-motivation"><strong>Introduction and Motivation</strong></a>
-  <ul class="collapse">
-  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem Statement</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><strong>Solution</strong></a></li>
-  <li><a href="#experimental-setup" id="toc-experimental-setup" class="nav-link" data-scroll-target="#experimental-setup"><strong>Experimental Setup</strong></a>
-  <ul class="collapse">
-  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics">Metrics</a></li>
-  </ul></li>
-  <li><a href="#performance-results" id="toc-performance-results" class="nav-link" data-scroll-target="#performance-results">Performance Results</a></li>
-  <li><a href="#conclusions-and-further-work" id="toc-conclusions-and-further-work" class="nav-link" data-scroll-target="#conclusions-and-further-work"><strong>Conclusions and Further Work:</strong></a></li>
-  </ul></li>
-  </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="Presentation-1-preview.html"><i class="bi bi-journal-code"></i>Untitled</a></li></ul></div></nav>
+  
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-
-
-  
-
-
-<section id="introduction-and-motivation" class="level1">
-<h1><strong>Introduction and Motivation</strong></h1>
-<p>This review analyzes the study by Garriga et al.&nbsp;(2023), published in <em>Cell Medical</em>, titled <em>“Combining Clinical Notes with Structured Electronic Health Records Enhances the Prediction of Mental Health Crises.”</em></p>
-<p>The research investigates the utility of combining unstructured clinical notes with structured data from electronic mental health records (EMHR) to improve the prediction of mental health crises. The relevance of <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> study is underscored by an alarming rise in mental health-related hospitalizations coinciding with significant resource and workforce challenges. Recent data highlights that hospitalizations for mental health conditions, particularly among youth in Ontario, have surged since the COVID-19 pandemic. Mental health crises requiring hospitalization (e.g., emotional breakdowns, substance overdoses and suicide attempts) have increased __-fold. What’s worse, many of these crises might have been prevented with early intervention. However a lack of predictive tools has made it difficult for healthcare systems to anticipate and address these crises before they peak.</p>
-<p>Leveraging Electronic Health Records (EHRs) to bolster clinical decision-making is not new, as clinicians and researchers have long utilized structured data like diagnosis codes, lab results, and medication records, to inform predictive models and treatment strategies. However, due to computational restraints and …. , unstructured data like clinical notes and other free-form text and imagery until recently has been left largely untapped. Considering this form of data constitutes a substantial portion of EHRs in terms of volume and contains critical narrative information like clinician observations, patient-reported symptoms, and contextual details surrounding patient interactions that structured data might lack, by incorporating this textual data into predictive models…..</p>
-<section id="problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
-<p>The primary objective of the study was to predict mental health crises utilizing both structured and unstructured mental health data.</p>
-<p>When a patient is admitted to acute care with a mental crisis it might be their first visit or the most recent in a long history of crisis events. At each event, a mix of information is collected including structured data comprised of discrete variables (i.e., gender, diagnoses, and school district), continuous variables (i.e., standardized assessment scores) and administrative data (i.e., number of visits, hours of service) and time based data like intake, discharge and assessment dates.</p>
-<p>The main challenge posed by these data was the clinical reality that the information contained in any one EHR varied significantly from patient to patient. Moreover, clincian-level idosyncricies like personal style, work habits and clinical modality meant that the quality, availability and volume of clinical notes in EHRs was highly inconsistent. Moreover, the severity and frequency of a patients mental health crises was related to the volume of notes within the EHR, meaning that those with more severe or recurrent episodes typically had a greater volume of clinical notes. As such, it was important that to establish the minimum quantity of unstructured data that would contribute to the accurate prediction of mental health crises and still remain effective across a spectrum of patient complexity, regardless of the volume of clinical notes.</p>
-<p>How would they contend with this probleM?</p>
-</section>
-<section id="solution" class="level2">
-<h2 class="anchored" data-anchor-id="solution"><strong>Solution</strong></h2>
-<p>The study extended <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> previous work that had analyzed 60,000 de-identified patient records collected over eight years to predict mental health crisis within the next 28 days following a weekly algorithm prediction. Their main objectives were to i) compare the predictive power of unstructured data alone with structured data; ii) improve performance by comparing methods for combining structured and unstructured data; and iii) investigate the minimum amount of unstructured data necessary to improve model accuracy.</p>
-</section>
-<section id="experimental-setup" class="level2">
-<h2 class="anchored" data-anchor-id="experimental-setup"><strong>Experimental Setup</strong></h2>
-<p>To this end researchers utilized a dataset that included more than two million crisis events that had occured between September 2012 and July 2020, which is an average of 336 crisis events per week. 99% of patients had at least one clinical note and 81% had two notes or more. On average unstructured data yielded one note for each patient approximately every 10 weeks with the average not containing on average around 110 words.</p>
-<p>450 features were computed from the structured data along three broad categories: i) static features; ii) most recent interaction variables and iii) elapsed time variables that quantified the amount of time since a specific event (e.g.&nbsp;last assessment or crisis episode). From the unstructured data (i.e.&nbsp;clinical notes written by mental health practitioners), semantic features were calculated across 768 dimensions using a BERT model. See Star methods.</p>
-<p>Data was not split randomly instead training, validation and testing segments were time-split according to temporal slices which mirrored the model’s potential application in everyday practice. This meant that training data were comprised of earlier data, validation data from the period following and test data included a years worth of most recent data. Interestingly the researchers omited data between January 2020 and July 2020 because of the potential impact of COVID that impacted hospita lroutines and therefore EHRs. The best hyperperameters of each model were selected by optimizing the area under the precision recall curve (AUPRC) and then used to train the model in the training and validation sets.</p>
-<p>Shap values were used to measure the contribution of each feature in the model which is a technique taken from game theory that is used for local interpretability of ML models.</p>
-<section id="metrics" class="level3">
-<h3 class="anchored" data-anchor-id="metrics">Metrics</h3>
-<p>With these features, four models were trained to predict the risk of relapse within the next 28 days as a binary classification problem (relapse versus no relapse) based on structured data only (Struct XGB and Struct DNN), unstructured data only (Unstruct DNN) and both data types (Hybrid DNN). Finally an ensemble model was created using predictions from a version of the Hybrid DNN when there were unstructured data available and the predictions from the Struct DNN model otherwise (Ensemble DNN) see <a href="#fig-experimentaldesign" class="quarto-xref">Figure&nbsp;1</a>. Two baselines were identified: a 5-factor logistic regression model (LogReg5) informed by important variables suggested by the literature; and a heuristic model that ranks patients based on total number of crisis experienced during the past year (last 53 weeks).</p>
-<div id="fig-experimentaldesign" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-experimentaldesign-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/paste-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Includes all five trained models and the types of data used as input. Struct XGB is an XGBoost model and the rest feed forward neural networks with ensemble DNN combining the results of a neural network trained on structured data only and a neural network trained on both structured and unstructured data."><img src="images/paste-1.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-experimentaldesign-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Includes all five trained models and the types of data used as input. Struct XGB is an XGBoost model and the rest feed forward neural networks with ensemble DNN combining the results of a neural network trained on structured data only and a neural network trained on both structured and unstructured data.
-</figcaption>
-</figure>
-</div>
-<p>Due to the fact that relapses occur infrequently (prevalence of 1.3%), the models were tuned to maximize the area under the precision recall curve (AUPRC) on the validation set which they point out is the preferred metric for evaluationg the performance of binary classification tasks with an unbalanced distribution.</p>
-</section>
-</section>
-<section id="performance-results" class="level2">
-<h2 class="anchored" data-anchor-id="performance-results">Performance Results</h2>
-<p>The best model performance using only structured data was an XGBoost model which is a tree-based classifier that implements gradient boosting. For the model with only unstructured data and the combined structured and unstructured data, the best model performance was a feedforward deep neural network (DNN).</p>
-<p><a href="images/paste-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/paste-2.png" class="img-fluid" width="350"></a></p>
-<p><strong>Provide an in-depth analysis of the performance results, and feel free to include diagrams or data directly from the paper.</strong></p>
-<p><a href="images/paste-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/paste-3.png" class="img-fluid" width="513"></a></p>
-<p><img src="images/paste-4.png" class="img-fluid" width="513"><!-- --></p>
-<ul>
-<li>Contrast the presented solution with other existing methods, focusing on its advantages and disadvantages. Reflect on what we’ve studied in class, making connections where relevant.</li>
-</ul>
-</section>
-<section id="conclusions-and-further-work" class="level2">
-<h2 class="anchored" data-anchor-id="conclusions-and-further-work"><strong>Conclusions and Further Work:</strong></h2>
-<ul>
-<li><strong>Summarize the paper’s key takeaways and suggest potential areas for future research or exploration.</strong></li>
-</ul>
-
-</section>
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-garriga2023" class="csl-entry" role="listitem">
-Garriga, Roger, Teodora Sandra Buda, João Guerreiro, Jesús Omaña Iglesias, Iñaki Estella Aguerri, and Aleksandar Matić. 2023. <span>“Combining Clinical Notes with Structured Electronic Health Records Enhances the Prediction of Mental Health Crises.”</span> <em>Cell Reports Medicine</em> 4 (11). <a href="https://doi.org/10.1016/j.xcrm.2023.101260">https://doi.org/10.1016/j.xcrm.2023.101260</a>.
-</div>
-</div></section></div></main>
-<!-- /main column -->
-<script id="quarto-html-after-body" type="application/javascript">
+     <p>This is a test</p>
+<p><a href="images/paste-5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/paste-5.png" class="img-fluid"></a></p>
+     </main>
+<!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -623,9 +597,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-</div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
@@ -656,9 +628,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   };
   
 })();
-          </script>
-
-
-
-
+          </script> 
+  
 </body></html>

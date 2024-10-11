@@ -10,7 +10,8 @@ format:
       hypothesis: true
 
   # (other formats)
-  # pdf: default
+  pdf:
+    toc: true
 
 execute:
   freeze: true
