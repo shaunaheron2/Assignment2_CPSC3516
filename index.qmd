@@ -33,19 +33,33 @@ How would they contend with this probleM?
 
 ## **Solution**
 
--   Detail the paper's **significant contribution to the subject.**
-
-![Includes all five trained models and the types of data used as input. Struct XGB is an XGBoost model and the rest feed forward neural networks with ensemble DNN combining the results of a neural network trained on structured data only and a neural network trained on both structured and unstructured data.](images/paste-1.png)
-
--   Contrast the presented solution with other existing methods, focusing on its advantages and disadvantages. Reflect on what we've studied in class, making connections where relevant.
+The study extended @garriga2023 previous work that had analyzed 60,000 de-identified patient records collected over eight years to predict mental health crisis within the next 28 days following a weekly algorithm prediction. Their main objectives were to i) compare the predictive power of unstructured data alone with structured data; ii) improve performance by comparing methods for combining structured and unstructured data; and iii) investigate the minimum amount of unstructured data necessary to improve model accuracy.
 
 ## **Experimental Results**
+
+To this end researchers utilized a dataset that included more than two million crisis events that had occured between September 2012 and July 2020, which is an average of 336 crisis events per week. 99% of patients had at least one clinical note and 81% had two notes or more. On average unstructured data yielded one note for each patient approximately every 10 weeks with the average not containing on average around 110 words.
+
+450 features were computed from the structured data along three broad categories: i) static features; ii) most recent interaction variables and iii) elapsed time variables that quantified the amount of time since a specific event (e.g. last assessment or crisis episode). From the unstructured data (i.e. clinical notes written by mental health practitioners), semantic features were calculated across 768 dimensions using a BERT model. See Star methods.
+
+With these features, four models were trained to predict the risk of relapse within the next 28 days as a binary classification problem (relapse versus no relapse) based on structured data only (Struct XGB and Struct DNN), unstructured data only (Unstruct DNN) and both data types (Hybrid DNN). Finally an ensemble model was created using predictions from a version of the Hybrid DNN when there were unstructured data available and the predictions from the Struct DNN model otherwise (Ensemble DNN) see @fig-experimentaldesign.
+
+![Includes all five trained models and the types of data used as input. Struct XGB is an XGBoost model and the rest feed forward neural networks with ensemble DNN combining the results of a neural network trained on structured data only and a neural network trained on both structured and unstructured data.](images/paste-1.png){#fig-experimentaldesign}
+
+Due to the fact that relapses occur infrequently (prevalence of 1.3%), the models were tuned to maximize the area under the precision recall curve (AUPRC) on the validation set which they point out is the preferred metric for evaluationg the performance of binary classification tasks with an unbalanced distribution.
+
+The best model performance using only structured data was an XGBoost model which is a tree-based classifier that implements gradient boosting. For the model with only unstructured data and the combined structured and unstructured data, the best model performance was a feedforward deep neural network (DNN).
+
+Two baselines were identified: a 5-factor logistic regression model (LogReg5) informed by important variables suggested by the literature; and a heuristic model that ranks patients based on total number of crisis experienced during the past year (last 53 weeks).
 
 -   **Identify the platform or medium employed (e.g., simulation, robot, or experimental setup).**
 
 -   **Provide an in-depth analysis of the performance results, and feel free to include diagrams or data directly from the paper.**
 
 -   **For papers focused on theory, clearly explain the fundamental theoretical concepts. Address improvements in metrics such as accuracy, efficiency, and other relevant benchmarks.**
+
+<!-- -->
+
+-   Contrast the presented solution with other existing methods, focusing on its advantages and disadvantages. Reflect on what we've studied in class, making connections where relevant.
 
 ## **Conclusions and Further Work:**
 

@@ -34,6 +34,7 @@ How would they contend with this probleM?
 ## **Solution**
 
 -   Detail the paper's **significant contribution to the subject.**
+-   The study extends their previous work that analyzed 60000 de-identified patient records collected over eight years to predict mental health crisis within the next 28 days following a weekly algorithm prediction. They extended this work in three ways: i) compared the predictive power of unstructured data alone with structured data; ii) improve the performance of the earlier prediction model by comparing different methods for combining structured and unstructured data; iii) investigate the minimum availability of unstructured data that improves model fit.
 
 ![Includes all five trained models and the types of data used as input. Struct XGB is an XGBoost model and the rest feed forward neural networks with ensemble DNN combining the results of a neural network trained on structured data only and a neural network trained on both structured and unstructured data.](images/paste-1.png)
 
