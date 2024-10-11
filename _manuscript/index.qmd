@@ -23,25 +23,17 @@ Leveraging Electronic Health Records (EHRs) to bolster clinical decision-making 
 
 ## Problem Statement
 
-When a patient is admitted to acute care with a mental crisis a mix of information is collected. The structured component of EHRs contain discrete variables like gender, diagnoses, and school district as well as continuous variables like standardized assessment scores, administrative counts, like number of visits, hours of service and missed appointment counts. EHRs also contain time data like intake dates, discharge date and assessment dates.
-
-While structured data is often easier to process–though even it is known to be notoriously unwieldy in terms of sparseness, missing values, nested features and high multicollinearity–they do not provide the complete clinical context of a patient. Research shows that bolstering structured data with qualitative, unstructured sources can improve cohort identifiaction as well as the prediction accuracy of hospital readmission and suicide attempts. Futhermore, unlike in cardivascular disorders where objective measurements of blood pressure or plasma workups can be stored in structured EHRs, mental health assessments are highly subjective and often the bulk of important information about patient health is stored under clinical observations in the clinical notes. For this reason, understanding how these data predict clinitical events is essential to fully leverage the breadth and depth of information contained in EHRs.
-
-The main challenge posed by these data is the clinical reality that the information contained in any one EHR will vary significantly from patient to patient. Moreover, idosyncricies relating to differences in how clinicians differ in style and clinical opinion mean that the volume, quality and availability of clinical notes is highly inconsistent. Moreoever, the volume of notes is usually directly related with the severity and frequency of the patients mental health crises, which means that those with more severe or recurrent episodes will have a greater volume of clinical notes, making it a more difficult task to predict crises in new patients without a long history.
-
 The primary objective of the study was to predict mental health crises utilizing both structured and unstructured mental health data.
 
-Structed data is composed of a mix of data like clinical notes, discharge reports or even correspondance with clients such as text messages). While structured data is easier to process–
+When a patient is admitted to acute care with a mental crisis it might be their first visit or the most recent in a long history of crisis events. At each event, a mix of information is collected including structured data comprised of discrete variables (i.e., gender, diagnoses, and school district), continuous variables (i.e., standardized assessment scores) and administrative data (i.e., number of visits, hours of service) and time based data like intake, discharge and assessment dates.
 
--   **Using an example to illustrate the problem can be particularly effective.**
+The main challenge posed by these data was the clinical reality that the information contained in any one EHR varied significantly from patient to patient. Moreover, clincian-level idosyncricies like personal style, work habits and clinical modality meant that the quality, availability and volume of clinical notes in EHRs was highly inconsistent. Moreover, the severity and frequency of a patients mental health crises was related to the volume of notes within the EHR, meaning that those with more severe or recurrent episodes typically had a greater volume of clinical notes. As such, it was important that to establish the minimum quantity of unstructured data that would contribute to the accurate prediction of mental health crises and still remain effective across a spectrum of patient complexity, regardless of the volume of clinical notes.
 
-To this end, the authors
+How would they contend with this probleM?
 
 ## **Solution**
 
 -   Detail the paper's **significant contribution to the subject.**
-
--   Describe the proposed solution in depth.
 
 ![Includes all five trained models and the types of data used as input. Struct XGB is an XGBoost model and the rest feed forward neural networks with ensemble DNN combining the results of a neural network trained on structured data only and a neural network trained on both structured and unstructured data.](images/paste-1.png)
 
