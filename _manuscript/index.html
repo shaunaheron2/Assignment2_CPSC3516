@@ -157,10 +157,6 @@ div.csl-indent {
 <p><strong>AUROC Across 52 weeks:</strong></p>
 <p><img src="images/paste-4.png" class="img-fluid" alt="Figure: Model Accuracy"> <em>Figure 4. Performance of the Hybrid model compared to the unstructured and structured only models in predicting crisis episodes at 10 week intervals. Points and lines indicate mean and ± standard deviation values computed in the 52 weeks of the test set. Adapted from <span class="citation" data-cites="garriga2023"><a href="#ref-garriga2023" role="doc-biblioref">[1]</a>, pg. 5</span></em></p>
 </section>
-<section id="conclusion" class="level1">
-<h1><strong>Conclusion</strong></h1>
-<p>The study effectively demonstrated that incorporating unstructured data, such as clinical notes, alongside structured EHR data improved the ability to predict mental health crises. Their findings underscore the potential for including qualitative clinical information in predictive modeling and highlights a novel ensemble methodology that can be used to build a combined model that can effectively extract value from both data types. depening on what type is available.</p>
-</section>
 <section id="critical-analysis" class="level1">
 <h1><strong>Critical Analysis</strong></h1>
 <p>The paper offered a compelling case for the inclusion of unstructured data in predictive modeling, but there are several areas for improvement. Firstly, while the authors highlighted the potential benefits of unstructured data, the interpretability of their hybrid model remained limited. In class, we learned about techniques like Local Interpretable Model-agnostic Explanations (LIME) and SHapley Additive exPlanations (SHAP), which could be used to make the DNN’s predictions more interpretable. Incorporating such methods would make the model’s predictions more actionable for healthcare practitioners, who need clear explanations to make informed decisions.</p>
@@ -168,6 +164,10 @@ div.csl-indent {
 <p>I especially liked their inclusion of SHAP values and analyses of variables that contributed most to model predictions–TALK MORE ABOUT THIS.</p>
 <p>Secondly, the study primarily focused on a single health system, which might limit the generalizability of the results. Future studies should consider multi-site evaluations to determine if the predictive power of these models held in different settings with varied data quality and clinical practices.</p>
 <p>Lastly, while the results were promising, they relied heavily on high-quality, well-documented clinical notes. In practice, the quality of clinical notes could vary significantly, and the models’ reliance on unstructured data could lead to inconsistencies in predictions if the notes were incomplete or ambiguous.</p>
+</section>
+<section id="conclusion" class="level1">
+<h1><strong>Conclusion</strong></h1>
+<p>The study effectively demonstrated that incorporating unstructured data, such as clinical notes, alongside structured EHR data improved the ability to predict mental health crises. Their findings underscore the potential for including qualitative clinical information in predictive modeling and highlights a novel ensemble methodology that can be used to build a combined model that can effectively extract value from both data types. depening on what type is available.</p>
 
 </section>
 
@@ -604,7 +604,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
