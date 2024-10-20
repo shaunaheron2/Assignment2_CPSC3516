@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.5.57" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+
+<title>Paper Review</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<!-- htmldependencies:E3FAD763 -->
+<script async src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <div id="quarto-toc-target"></div>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default toc-left">
+  <div class="quarto-title-banner">
+    <div class="quarto-title column-body">
+      <h1 class="title">Paper Review</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+            <div class="quarto-title-meta-author">
+          <div class="quarto-title-meta-heading">Author</div>
+          <div class="quarto-title-meta-heading">Affiliation</div>
+          
+                <div class="quarto-title-meta-contents">
+            <p class="author">Shauna Heron </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Laurentian University
+                      </p>
+                  </div>
+                    </div>
+        
+        <div class="quarto-title-meta">
+
+                      
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header>
+
+  
+
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-and-motivation" id="toc-introduction-and-motivation"><strong>Introduction and Motivation</strong></a></li>
+  <li><a href="#problem-statement" id="toc-problem-statement"><strong>Problem Statement</strong></a></li>
+  <li><a href="#solution" id="toc-solution"><strong>Solution</strong></a></li>
+  <li><a href="#experimental-results" id="toc-experimental-results"><strong>Experimental Results</strong></a></li>
+  <li><a href="#conclusion" id="toc-conclusion"><strong>Conclusion</strong></a></li>
+  <li><a href="#critical-analysis" id="toc-critical-analysis"><strong>Critical Analysis</strong></a></li>
+  </ul>
+</nav>
+<section id="introduction-and-motivation" class="level1">
+<h1><strong>Introduction and Motivation</strong></h1>
+<p>This review analyzes the study by Garriga et al. (2023), published in <em>Cell Medical</em>, titled <em>“Combining Clinical Notes with Structured Electronic Health Records Enhances the Prediction of Mental Health Crises.”</em></p>
+<p>The research investigates the utility of combining unstructured clinical notes with structured data from electronic dirhealth records (EHR) to improve the prediction of mental health crises. The relevance of <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> study is underscored by an alarming rise in mental health-related hospitalizations coinciding with significant resource and workforce challenges. Even in Ontario, recent data highlights that hospitalizations for mental health conditions, particularly among youth in Ontario, have surged since the COVID-19 pandemic. Moreoever, those requiring hospitalization (e.g., emotional breakdowns, substance overdoses and suicide attempts) have increased by 90% (CIHI 2022). Many of these crises might have been prevented with early intervention; however, a lack of reliable, automated predictive tools has made it difficult for healthcare systems to anticipate and address these crises before they peak.</p>
+<p>As <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> point out in their paper, leveraging EHRs to bolster clinical decision-making is not new. Clinicians and researchers have long utilized structured data like diagnosis codes, lab results, and medication records to inform predictive models. However, limits on computational power meant that unstructured data like clinical notes and other free-form text, were most often left out of feature sets.</p>
+<p>Considering the rich contextual information that clinical notes contain, as well as advances in free-form text processing, the primary aim of this study was to determine if including clinical notes alongside structured EHR data would enhance predictive performance for mental health crisis prediction compared to using structured data alone.</p>
+</section>
+<section id="problem-statement" class="level1">
+<h1><strong>Problem Statement</strong></h1>
+<p>The study addressed the underutilization of unstructured data in EHRs, which could provide rich, contextual information that may be important data in improving prediction of mental health crises. For instance, a patient’s history of recurring symptoms linked with a traumatic incident may be documented qualitatively in the clinical notes but not the structured data, missing information that might provide a more comprehensive understanding of potential future risks. The paper aimed to bridge this gap by incorporating these unstructured elements into predictive modeling. – something about patterns –</p>
+</section>
+<section id="solution" class="level1">
+<h1><strong>Solution</strong></h1>
+<p>With these points in mind, the authors proposed a hybrid approach combining structured and unstructured data. Specifically, they utilized a deep neural network (DNN) to integrate both data types, hypothesizing that models including unstructured data (such as clinical notes) would predict crisis events more accurately than just structured data alone.</p>
+<p>The models included a deep neural network trained on structured data (referred to as Struct DNN), a model trained exclusively on unstructured data (Text DNN), and a combined model that integrated both structured and unstructured data (Hybrid DNN) if. Based on those tests, the final model selection used an ensemble of predictions from the Hybrid DNN when unstructured data was available and predictions from the Struct DNN model otherwise (referred to as Ensemble DNN).</p>
+<p><strong>Model Architecture and Data Flow Diagram:</strong></p>
+<p><img src="images/paste-1.png" class="img-fluid" alt="Figure: Model Architecture" /> <em>Figure 1. Overview of the Hybrid DNN model and data input structure, showing how structured and unstructured data are processed.</em></p>
+<p>To address the issue of class imbalance (since relapses were rare with only 1.3% prevalence), models were tuned to maximize the area under the precision-recall curve (AUPRC)–which as we learned in class is particularly useful metric when evaluating results produced by imbalanced classes. As highlighted in our lessons, precision-recall metrics over relying on accuracy alone provides a better measure of a model’s predictive quality when data is unbalanced and in settings where sensitivity and an ability to minimize false positives are critical to balance in predicting health crises.</p>
+<p>To evaluate model performance, two baselines were used for comparison: a 5-factor logistic regression model informed by significant variables suggested in prior literature (LogReg5) and a heuristic model ranking patients by the total number of crises experienced in the past year.</p>
+</section>
+<section id="experimental-results" class="level1">
+<h1><strong>Experimental Results</strong></h1>
+<p>The experiments revealed that the best model trained on structured data was an XGBoost classifier, a tree-based model implementing gradient boosting. However, for models that included unstructured data (clinical notes), the Hybrid DNN provided the best performance. This finding suggests that their hypothesis was correct: incorporating clinical notes improved model ability to identifying potential mental health crises earlier compared to models trained on only structured data. The Hybrid DNN outperforming both the logistic regression baseline and the heuristic model with the highest AUPRC.</p>
+<p><strong>Performance Comparison Across Models:</strong></p>
+<p>To visualize the comparative performance, the following charts display the ROCAUC and AUPRC for different models:</p>
+<p><strong>Precision-Recall Curve for Different Models:</strong></p>
+<p>The precision-recall curve in figure ___ underscores why precision and recall are better choices for unbalanced data and in scenarios like mental health crisis prediction, where potential crises are flagged but the model is still precise enough to minimize false positives. This aligns with our class discussions on balancing the risks of false positives versus false negatives, particularly in high-stakes healthcare settings where there is a cost to both.</p>
+<p><img src="images/paste-3.png" class="img-fluid" alt="Figure: Precision-Recall Curves" /> <em>Figure 3. Precision-recall curves for the Hybrid DNN, Struct DNN, and Text DNN, across 10-week intervals illustrating an increase in performance of all models over time as the amount of information increases across weeks.</em></p>
+<p>According to the author’s the increase over time is most likely only in part due to the increase in information in the clinical record over time but due mostly to the clinical fact that the prevalance of crisis-relapse tends to increase over time regardless.</p>
+<p>The AUROC curve on the other hand shows a different pattern. The performance of the Structured and Unstructured-only models decreases over time until about 45 weeks when the structured models performance increases. Interestingly, the performance of the unstructured-only model continues to decrease, which the authors suggest highlights the complexity of modelling mental health crises where the quantity of data in a given client file will tend to increase over time, the overall number of patients decreases which impacts the neural network. Considering neural networks based on text input tends to require more examples or training instances to perform adequately. Note too how the structured only xgboost is best at predicting crisis in the earliest stages with fewer than 10% of notes, but with 20% of weeks with available notes, the hybrid model’s performance jumps to match the unstructured offering a slight improvement on performance when compared the XGBoost alone which indicates that the addition of unstructured data helped the model make more accurate predictions across a range of thresholds, improving its overall discriminatory power.</p>
+<p><strong>AUROC Across 52 weeks:</strong></p>
+<p><img src="images/paste-4.png" class="img-fluid" alt="Figure: Model Accuracy" /> <em>Figure 4. Performance of the Hybrid model compared to the unstructured and structured only models in predicting crisis episodes at 10 week intervals. Points and lines indicate mean and ± standard deviation values computed in the 52 weeks of the test set.</em></p>
+</section>
+<section id="conclusion" class="level1">
+<h1><strong>Conclusion</strong></h1>
+<p>The study effectively demonstrated that incorporating unstructured data, such as clinical notes, alongside structured EHR data improved the ability to predict mental health crises. Their findings underscore the potential for including qualitative clinical information in predictive modeling and highlights a novel ensemble methodology that can be used to build a combined model that can effectively extract value from both data types. depening on what type is available.</p>
+</section>
+<section id="critical-analysis" class="level1">
+<h1><strong>Critical Analysis</strong></h1>
+<p>The paper offered a compelling case for the inclusion of unstructured data in predictive modeling, but there are several areas for improvement. Firstly, while the authors highlighted the potential benefits of unstructured data, the interpretability of their hybrid model remained limited. In class, we learned about techniques like Local Interpretable Model-agnostic Explanations (LIME) and SHapley Additive exPlanations (SHAP), which could be used to make the DNN’s predictions more interpretable. Incorporating such methods would make the model’s predictions more actionable for healthcare practitioners, who need clear explanations to make informed decisions.</p>
+<p>Future research could explore the generalizability of these findings to other domains within healthcare. In particular, in my own research I am wondering how this method could be used to predict case complexity to caseload management. and refine <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> ’s approach to make the integration of unstructured data more interpretable. Another potential direction was improving methods for natural language processing (NLP) to better extract meaningful insights from clinical notes, which could further enhance predictive performance.</p>
+<p>I especially liked their inclusion of SHAP values and analyses of variables that contributed most to model predictions–TALK MORE ABOUT THIS.</p>
+<p>Secondly, the study primarily focused on a single health system, which might limit the generalizability of the results. Future studies should consider multi-site evaluations to determine if the predictive power of these models held in different settings with varied data quality and clinical practices.</p>
+<p>Lastly, while the results were promising, they relied heavily on high-quality, well-documented clinical notes. In practice, the quality of clinical notes could vary significantly, and the models’ reliance on unstructured data could lead to inconsistencies in predictions if the notes were incomplete or ambiguous.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-garriga2023" class="csl-entry" role="listitem">
+Garriga, Roger, Teodora Sandra Buda, João Guerreiro, Jesús Omaña Iglesias, Iñaki Estella Aguerri, and Aleksandar Matić. 2023. <span>“Combining Clinical Notes with Structured Electronic Health Records Enhances the Prediction of Mental Health Crises.”</span> <em>Cell Reports Medicine</em> 4 (11). <a href="https://doi.org/10.1016/j.xcrm.2023.101260">https://doi.org/10.1016/j.xcrm.2023.101260</a>.
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id = "quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+</body>
+
+</html>

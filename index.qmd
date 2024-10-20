@@ -9,11 +9,6 @@ authors:
 bibliography: references.bib
 ---
 
-```{r}
-
-
-```
-
 # **Introduction and Motivation**
 
 This review analyzes the study by Garriga et al. (2023), published in *Cell Medical*, titled *"Combining Clinical Notes with Structured Electronic Health Records Enhances the Prediction of Mental Health Crises."*
