@@ -10,11 +10,11 @@ format:
       hypothesis: true
 
   # (other formats)
-  pdf:
-    toc: true
-
+  typst:
+    bibliographystyle: ieee
+    
 execute:
-  freeze: true
+  freeze: false
 
 
 
