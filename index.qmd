@@ -1,37 +1,34 @@
 ---
 title: Paper Review
-toc: true
+toc: false
 authors:
   - name: Shauna Heron
     affiliation: Laurentian University
     roles: writing
     corresponding: true
 bibliography: references.bib
+bibliographystyle: ieee
 ---
 
 # **Introduction and Motivation**
 
-This review analyzes the study by Garriga et al. (2023), published in *Cell Medical*, titled *"Combining Clinical Notes with Structured Electronic Health Records Enhances the Prediction of Mental Health Crises."*
+This review analyzes a study by @garriga2023, published in *Cell Medical*, titled *"Combining Clinical Notes with Structured Electronic Health Records Enhances the Prediction of Mental Health Crises."*
 
-The research investigates the utility of combining unstructured clinical notes with structured data from electronic dirhealth records (EHR) to improve the prediction of mental health crises. The relevance of @garriga2023 study is underscored by an alarming rise in mental health-related hospitalizations coinciding with significant resource and workforce challenges. Even in Ontario, recent data highlights that hospitalizations for mental health conditions, particularly among youth in Ontario, have surged since the COVID-19 pandemic. Moreoever, those requiring hospitalization (e.g., emotional breakdowns, substance overdoses and suicide attempts) have increased by 90% (CIHI 2022). Many of these crises might have been prevented with early intervention; however, a lack of reliable, automated predictive tools has made it difficult for healthcare systems to anticipate and address these crises before they peak.
+The research investigates the utility of combining unstructured clinical notes with structured data from electronic health records (EHR) to improve the prediction of mental health crises [@garriga2023]. The relevance of this research is underscored by an alarming rise in mental health-related hospitalizations coinciding with significant workforce challenges, stressing the need for tools that might anticipate demand and thereby help manage caseloads more efficiently. Even in Ontario, recent data highlights that hospitalizations for mental health conditions, particularly among youth, have surged since the COVID-19 pandemic [@addressi2022] Moreoever, those requiring hospitalization (e.g., emotional breakdowns, substance overdoses and suicide attempts) have increased by 90% [@addressi2022], of which many might have been prevented with early intervention, suggesting that an automated tool for predicting crisis onset might help anticipate and address mental health crises before they peak.
 
-As @garriga2023 point out in their paper, leveraging EHRs to bolster clinical decision-making is not new. Clinicians and researchers have long utilized structured data like diagnosis codes, lab results, and medication records to inform predictive models. However, limits on computational power meant that unstructured data like clinical notes and other free-form text, were most often left out of feature sets.
+As the authors point out, leveraging EHRs to bolster clinical decision-making is not new [@garriga2023]. Clinicians and researchers have long utilized structured data like diagnosis codes, lab results, and medication records to inform predictive models. However, limits on computational power as well as availability of knowledge necessary to implement such models meant that unstructured data like clinical notes and other free-form text, were most often left out of feature sets.
 
-Considering the rich contextual information that clinical notes contain, as well as advances in free-form text processing, the primary aim of this study was to determine if including clinical notes alongside structured EHR data would enhance predictive performance for mental health crisis prediction compared to using structured data alone.
-
-# **Problem Statement**
-
-The study addressed the underutilization of unstructured data in EHRs, which could provide rich, contextual information that may be important data in improving prediction of mental health crises. For instance, a patient’s history of recurring symptoms linked with a traumatic incident may be documented qualitatively in the clinical notes but not the structured data, missing information that might provide a more comprehensive understanding of potential future risks. The paper aimed to bridge this gap by incorporating these unstructured elements into predictive modeling. -- something about patterns --
+Considering the rich contextual information that clinical notes contain, as well as advances in free-form text processing, the primary aim of the study was to determine if including clinical notes alongside structured EHR data would enhance predictive performance for mental health crisis prediction compared to using structured data alone. The study addressed the underutilization of unstructured data in EHRs, which could provide rich, contextual information that may be important data in improving prediction of mental health crises. For instance, a patient’s history of recurring symptoms linked with a traumatic incident may be documented qualitatively in the clinical notes but not the structured data, missing information that might provide a more comprehensive understanding of potential future risks. The paper aimed to bridge this gap by incorporating these unstructured elements into predictive modeling. -- something about patterns --
 
 # **Solution**
 
-With these points in mind, the authors proposed a hybrid approach combining structured and unstructured data. Specifically, they utilized a deep neural network (DNN) to integrate both data types, hypothesizing that models including unstructured data (such as clinical notes) would predict crisis events more accurately than just structured data alone.
+With these points in mind, the authors proposed a hybrid approach that built on an earlier study [@garriga2022] that modeled structured EHR to predict a weekly risk score. This time, they would include unstructured data too. Specifically, they utilized a deep neural network (DNN) to integrate both data types, hypothesizing that models including unstructured data (such as clinical notes) would predict crisis events with a weekly risk probability score more accurately than just structured data alone.
 
-The models included a deep neural network trained on structured data (referred to as Struct DNN), a model trained exclusively on unstructured data (Text DNN), and a combined model that integrated both structured and unstructured data (Hybrid DNN) if. Based on those tests, the final model selection used an ensemble of predictions from the Hybrid DNN when unstructured data was available and predictions from the Struct DNN model otherwise (referred to as Ensemble DNN).
+The models included a deep neural network trained on structured data (referred to as Struct DNN), a model trained exclusively on unstructured data (Text DNN), and a combined model that integrated both structured and unstructured data (Hybrid DNN) if. Based on those tests, the final model selection used an ensemble of predictions from the Hybrid DNN when unstructured data was available and predictions from the Struct DNN model otherwise (referred to as Ensemble DNN). See Figure 1 below for a flow chart of the experimental and modeling process.
 
 **Model Architecture and Data Flow Diagram:**
 
-![Figure: Model Architecture](images/paste-1.png){alt="Figure: Model Architecture"} *Figure 1. Overview of the Hybrid DNN model and data input structure, showing how structured and unstructured data are processed.*
+![Figure: Model Architecture](images/paste-1.png){alt="Figure: Model Architecture"} Figure 1. Overview of the Hybrid DNN model and data input structure, showing how structured and unstructured data are processed. Adapted from [@garriga2023, pg. 3]
 
 To address the issue of class imbalance (since relapses were rare with only 1.3% prevalence), models were tuned to maximize the area under the precision-recall curve (AUPRC)--which as we learned in class is particularly useful metric when evaluating results produced by imbalanced classes. As highlighted in our lessons, precision-recall metrics over relying on accuracy alone provides a better measure of a model's predictive quality when data is unbalanced and in settings where sensitivity and an ability to minimize false positives are critical to balance in predicting health crises.
 
