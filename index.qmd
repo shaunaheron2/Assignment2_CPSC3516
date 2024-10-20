@@ -7,7 +7,6 @@ authors:
     roles: writing
     corresponding: true
 bibliography: references.bib
-bibliographystyle: ieee
 ---
 
 # **Introduction and Motivation**

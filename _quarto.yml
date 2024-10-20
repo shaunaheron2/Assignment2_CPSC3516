@@ -6,6 +6,7 @@ manuscript:
 
 format:
   html:
+    csl: ieee.csl
     comments:
       hypothesis: true
 
