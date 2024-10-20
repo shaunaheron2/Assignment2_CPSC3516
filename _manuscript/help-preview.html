@@ -1,48 +1,137 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.5.57">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>Paper Review</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
+    <title>Paper Review</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+      /* CSS for citations */
+      div.csl-bib-body { }
+      div.csl-entry {
+        clear: both;
+        margin-bottom: 0em;
+      }
+      .hanging-indent div.csl-entry {
+        margin-left:2em;
+        text-indent:-2em;
+      }
+      div.csl-left-margin {
+        min-width:2em;
+        float:left;
+      }
+      div.csl-right-inline {
+        margin-left:2em;
+        padding-left:1em;
+      }
+      div.csl-indent {
+        margin-left: 2em;
+      }    </style>
+
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
+
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
+
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const titleBannerEl = window.document.querySelector("body > #title-block-header");
+      if (titleBannerEl) {
+        titleBannerEl.style.paddingTop = header.clientHeight + "px";
+      }
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = "index.html";
+            }
+        }, 100);
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
+    
+<script src="site_libs/manuscript-notebook/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -53,27 +142,24 @@ div.csl-indent {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<script async="" src="https://hypothes.is/embed.js"></script>
+     <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
     document.body.classList.add('hypothesis-enabled');
   });
-</script>
+</script>  
+      </head>
 
+  <body class="quarto-notebook">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      
+      <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6><i class="bi bi-journal-code"></i> Paper Review</h6>
 
-<meta name="citation_title" content="Paper Review">
-<meta name="citation_author" content="Shauna Heron">
-<meta name="citation_language" content="en">
-<meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_publication_date=1984-05;,citation_cover_date=1984-05;,citation_year=1984;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_issue=2;,citation_doi=10.1093/comjnl/27.2.97;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;,citation_publisher=Oxford University Press, Inc.;">
-<meta name="citation_reference" content="citation_title=Combining clinical notes with structured electronic health records enhances the prediction of mental health crises;,citation_author=Roger Garriga;,citation_author=Teodora Sandra Buda;,citation_author=João Guerreiro;,citation_author=Jesús Omaña Iglesias;,citation_author=Iñaki Estella Aguerri;,citation_author=Aleksandar Matić;,citation_publication_date=2023-11-21;,citation_cover_date=2023-11-21;,citation_year=2023;,citation_fulltext_html_url=https://www.cell.com/cell-reports-medicine/abstract/S2666-3791(23)00437-8;,citation_issue=11;,citation_doi=10.1016/j.xcrm.2023.101260;,citation_volume=4;,citation_language=en-US;,citation_journal_title=Cell Reports Medicine;">
-</head>
+            <a href="./help.qmd" class="btn btn-primary quarto-download-embed" download="help.qmd">Download Source</a>
+          </div>
 
-<body>
-
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Paper Review</h1>
@@ -104,7 +190,7 @@ div.csl-indent {
               </div>
       </div>
       <div class="quarto-title-meta-column-end quarto-other-formats-target">
-      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></p></div></div></div>
+      </div>
     </div>
 
 
@@ -117,94 +203,71 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction-and-motivation" id="toc-introduction-and-motivation" class="nav-link active" data-scroll-target="#introduction-and-motivation"><strong>Introduction and Motivation</strong></a>
-  <ul class="collapse">
-  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem Statement</a></li>
+  <li><a href="#introduction-and-motivation" id="toc-introduction-and-motivation" class="nav-link active" data-scroll-target="#introduction-and-motivation"><strong>Introduction and Motivation</strong></a></li>
+  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement"><strong>Problem Statement</strong></a></li>
   <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><strong>Solution</strong></a></li>
-  <li><a href="#experimental-setup" id="toc-experimental-setup" class="nav-link" data-scroll-target="#experimental-setup"><strong>Experimental Setup</strong></a>
-  <ul class="collapse">
-  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics">Metrics</a></li>
-  </ul></li>
-  <li><a href="#performance-results" id="toc-performance-results" class="nav-link" data-scroll-target="#performance-results">Performance Results</a></li>
-  <li><a href="#conclusions-and-further-work" id="toc-conclusions-and-further-work" class="nav-link" data-scroll-target="#conclusions-and-further-work"><strong>Conclusions and Further Work:</strong></a></li>
-  </ul></li>
+  <li><a href="#experimental-results" id="toc-experimental-results" class="nav-link" data-scroll-target="#experimental-results"><strong>Experimental Results</strong></a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><strong>Conclusion</strong></a></li>
+  <li><a href="#critical-analysis" id="toc-critical-analysis" class="nav-link" data-scroll-target="#critical-analysis"><strong>Critical Analysis</strong></a></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="help-preview.html"><i class="bi bi-journal-code"></i>Paper Review</a></li><li><a href="Presentation-1-preview.html"><i class="bi bi-journal-code"></i>Untitled</a></li></ul></div></nav>
+</nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-
-
-  
-
-
-<section id="introduction-and-motivation" class="level1">
+       <section id="introduction-and-motivation" class="level1">
 <h1><strong>Introduction and Motivation</strong></h1>
 <p>This review analyzes the study by Garriga et al.&nbsp;(2023), published in <em>Cell Medical</em>, titled <em>“Combining Clinical Notes with Structured Electronic Health Records Enhances the Prediction of Mental Health Crises.”</em></p>
-<p>The research investigates the utility of combining unstructured clinical notes with structured data from electronic mental health records (EMHR) to improve the prediction of mental health crises. The relevance of <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> study is underscored by the alarming rise in mental health-related hospitalizations coinciding with significant resource and workforce challenges. Even in Ontario, recent data highlights that hospitalizations for mental health conditions, particularly among youth in Ontario, have surged since the COVID-19 pandemic and those requiring hospitalization (e.g., emotional breakdowns, substance overdoses and suicide attempts) have increased by 90% (CIHI 2022). What’s worse, many of these crises might have been prevented with early intervention. However a lack of predictive tools has made it difficult for healthcare systems to anticipate and address these crises before they peak.</p>
-<p>As <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> point out, leveraging Electronic Health Records (EHRs) to bolster clinical decision-making is not new, as clinicians and researchers have long utilized structured data like diagnosis codes, lab results, and medication records, to inform predictive models and treatment strategies. However, due to computational restraints and challenges modelling unstructured data like clinical notes and other free-form text has been left largely untapped. Considering this form of data constitutes a substantial portion of EHRs in terms of volume and contains critical qualitative information like clinician observations, patient-reported symptoms, and contextual details surrounding patient interactions–all qualities that structured data lacks– <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> argue that by incorporating this textual data into predictive modelling we might further enhance their predictive ability.</p>
-<section id="problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
-<p>The primary objective of the study was to predict mental health crises utilizing both structured and unstructured mental health data.</p>
-<p>When a patient is admitted to acute care with a mental crisis it might be their first visit or the most recent in a long history of crisis events. At each event, a mix of information is collected including structured data comprised of discrete variables (i.e., gender, diagnoses, and school district), continuous variables (i.e., standardized assessment scores) and administrative data (i.e., number of visits, hours of service) and time based data like intake, discharge and assessment dates.</p>
-<p>The main challenge posed by these data was the clinical reality that the information contained in any one EHR varied significantly from patient to patient. Moreover, clincian-level idosyncricies like personal style, work habits and clinical modality meant that the quality, availability and volume of clinical notes in EHRs was highly inconsistent. Moreover, the severity and frequency of a patients mental health crises was related to the volume of notes within the EHR, meaning that those with more severe or recurrent episodes typically had a greater volume of clinical notes. As such, it was important that to establish the minimum quantity of unstructured data that would contribute to the accurate prediction of mental health crises and still remain effective across a spectrum of patient complexity, regardless of the volume of clinical notes.</p>
-<p>How would they contend with this probleM?</p>
+<p>The research investigates the utility of combining unstructured clinical notes with structured data from electronic health records (EHR) to improve the prediction of mental health crises. The relevance of <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> study is underscored by an alarming rise in mental health-related hospitalizations coinciding with significant resource and workforce challenges. Even in Ontario, recent data highlights that hospitalizations for mental health conditions, particularly among youth in Ontario, have surged since the COVID-19 pandemic. Moreoever, those requiring hospitalization (e.g., emotional breakdowns, substance overdoses and suicide attempts) have increased by 90% (CIHI 2022). Many of these crises might have been prevented with early intervention; however, a lack of reliable, automated predictive tools has made it difficult for healthcare systems to anticipate and address these crises before they peak.</p>
+<p>As <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> point out in their paper, leveraging EHRs to bolster clinical decision-making is not new. Clinicians and researchers have long utilized structured data like diagnosis codes, lab results, and medication records to inform predictive models. However, limits on computational power meant that unstructured data like clinical notes and other free-form text, were most often left out of feature sets.</p>
+<p>Considering the rich contextual information that clinical notes contain, as well as advances in free-form text processing, the primary aim of this study was to determine if including clinical notes alongside structured EHR data would enhance predictive performance for mental health crisis prediction compared to using structured data alone.</p>
 </section>
-<section id="solution" class="level2">
-<h2 class="anchored" data-anchor-id="solution"><strong>Solution</strong></h2>
-<p>The study extended <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> previous work that had analyzed 60,000 de-identified patient records collected over eight years to predict mental health crisis within the next 28 days following a weekly algorithm prediction. Their main objectives were to i) compare the predictive power of unstructured data alone with structured data; ii) improve performance by comparing methods for combining structured and unstructured data; and iii) investigate the minimum amount of unstructured data necessary to improve model accuracy.</p>
+<section id="problem-statement" class="level1">
+<h1><strong>Problem Statement</strong></h1>
+<p>The study addressed the underutilization of unstructured data in EHRs, which could provide rich, contextual information that may be important data in improving prediction of mental health crises. For instance, a patient’s history of recurring symptoms linked with a traumatic incident may be documented qualitatively in the clinical notes but not the structured data, missing information that might provide a more comprehensive understanding of potential future risks. The paper aimed to bridge this gap by incorporating these unstructured elements into predictive modeling. – something about patterns –</p>
 </section>
-<section id="experimental-setup" class="level2">
-<h2 class="anchored" data-anchor-id="experimental-setup"><strong>Experimental Setup</strong></h2>
-<p>To this end researchers utilized a dataset that included more than two million crisis events that had occured between September 2012 and July 2020, which is an average of 336 crisis events per week. 99% of patients had at least one clinical note and 81% had two notes or more. On average unstructured data yielded one note for each patient approximately every 10 weeks with the average not containing on average around 110 words.</p>
-<p>450 features were computed from the structured data along three broad categories: i) static features; ii) most recent interaction variables and iii) elapsed time variables that quantified the amount of time since a specific event (e.g.&nbsp;last assessment or crisis episode). From the unstructured data (i.e.&nbsp;clinical notes written by mental health practitioners), semantic features were calculated across 768 dimensions using a BERT model. See Star methods.</p>
-<p>Data was not split randomly instead training, validation and testing segments were time-split according to temporal slices which mirrored the model’s potential application in everyday practice. This meant that training data were comprised of earlier data, validation data from the period following and test data included a years worth of most recent data. Interestingly the researchers omited data between January 2020 and July 2020 because of the potential impact of COVID that impacted hospita lroutines and therefore EHRs. The best hyperperameters of each model were selected by optimizing the area under the precision recall curve (AUPRC) and then used to train the model in the training and validation sets.</p>
-<p>Shap values were used to measure the contribution of each feature in the model which is a technique taken from game theory that is used for local interpretability of ML models.</p>
-<section id="metrics" class="level3">
-<h3 class="anchored" data-anchor-id="metrics">Metrics</h3>
-<p>With these features, four models were trained to predict the risk of relapse within the next 28 days as a binary classification problem (relapse versus no relapse) based on structured data only (Struct XGB and Struct DNN), unstructured data only (Unstruct DNN) and both data types (Hybrid DNN). Finally an ensemble model was created using predictions from a version of the Hybrid DNN when there were unstructured data available and the predictions from the Struct DNN model otherwise (Ensemble DNN) see <a href="#fig-experimentaldesign" class="quarto-xref">Figure&nbsp;1</a>. Two baselines were identified: a 5-factor logistic regression model (LogReg5) informed by important variables suggested by the literature; and a heuristic model that ranks patients based on total number of crisis experienced during the past year (last 53 weeks).</p>
-<div id="fig-experimentaldesign" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-experimentaldesign-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/paste-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Includes all five trained models and the types of data used as input. Struct XGB is an XGBoost model and the rest feed forward neural networks with ensemble DNN combining the results of a neural network trained on structured data only and a neural network trained on both structured and unstructured data."><img src="images/paste-1.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-experimentaldesign-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Includes all five trained models and the types of data used as input. Struct XGB is an XGBoost model and the rest feed forward neural networks with ensemble DNN combining the results of a neural network trained on structured data only and a neural network trained on both structured and unstructured data.
-</figcaption>
-</figure>
-</div>
-<p>Due to the fact that relapses occur infrequently (prevalence of 1.3%), the models were tuned to maximize the area under the precision recall curve (AUPRC) on the validation set which they point out is the preferred metric for evaluationg the performance of binary classification tasks with an unbalanced distribution.</p>
+<section id="solution" class="level1">
+<h1><strong>Solution</strong></h1>
+<p>With these points in mind, the authors proposed a hybrid approach combining structured and unstructured data. Specifically, they utilized a deep neural network (DNN) to integrate both data types, hypothesizing that models including unstructured data (such as clinical notes) would predict crisis events more accurately than just structured data alone.</p>
+<p>The models included a deep neural network trained on structured data (referred to as Struct DNN), a model trained exclusively on unstructured data (Text DNN), and a combined model that integrated both structured and unstructured data (Hybrid DNN) if. Based on those tests, the final model selection used an ensemble of predictions from the Hybrid DNN when unstructured data was available and predictions from the Struct DNN model otherwise (referred to as Ensemble DNN).</p>
+<p><strong>Model Architecture and Data Flow Diagram:</strong></p>
+<p><img src="images/paste-1.png" class="img-fluid" alt="Figure: Model Architecture"> <em>Figure 1. Overview of the Hybrid DNN model and data input structure, showing how structured and unstructured data are processed.</em></p>
+<p>To address the issue of class imbalance (since relapses were rare with only 1.3% prevalence), models were tuned to maximize the area under the precision-recall curve (AUPRC)–which as we learned in class is particularly useful metric when evaluating results produced by imbalanced classes. As highlighted in our lessons, precision-recall metrics over relying on accuracy alone provides a better measure of a model’s predictive quality when data is unbalanced and in settings where sensitivity and an ability to minimize false positives are critical to balance in predicting health crises.</p>
+<p>To evaluate model performance, two baselines were used for comparison: a 5-factor logistic regression model informed by significant variables suggested in prior literature (LogReg5) and a heuristic model ranking patients by the total number of crises experienced in the past year.</p>
 </section>
+<section id="experimental-results" class="level1">
+<h1><strong>Experimental Results</strong></h1>
+<p>The experiments revealed that the best model trained on structured data was an XGBoost classifier, a tree-based model implementing gradient boosting. However, for models that included unstructured data (clinical notes), the Hybrid DNN provided the best performance. This finding suggests that their hypothesis was correct: incorporating clinical notes improved model ability to identifying potential mental health crises earlier compared to models trained on only structured data. The Hybrid DNN outperforming both the logistic regression baseline and the heuristic model with the highest AUPRC.</p>
+<p><strong>Performance Comparison Across Models:</strong></p>
+<p>To visualize the comparative performance, the following charts display the ROCAUC and AUPRC for different models:</p>
+<p><strong>Precision-Recall Curve for Different Models:</strong></p>
+<p>The precision-recall curve in figure ___ underscores why precision and recall are better choices for unbalanced data and in scenarios like mental health crisis prediction, where potential crises are flagged but the model is still precise enough to minimize false positives. This aligns with our class discussions on balancing the risks of false positives versus false negatives, particularly in high-stakes healthcare settings where there is a cost to both.</p>
+<p><img src="images/paste-3.png" class="img-fluid" alt="Figure: Precision-Recall Curves"> <em>Figure 3. Precision-recall curves for the Hybrid DNN, Struct DNN, and Text DNN, across 10-week intervals illustrating an increase in performance of all models over time as the amount of information increases across weeks.</em></p>
+<p>According to the author’s the increase over time is most likely only in part due to the increase in information in the clinical record over time but due mostly to the clinical fact that the prevalance of crisis-relapse tends to increase over time regardless.</p>
+<p>The AUROC curve on the other hand shows a different pattern. The performance of the Structured and Unstructured-only models decreases over time until about 45 weeks when the structured models performance increases. Interestingly, the performance of the unstructured-only model continues to decrease, which the authors suggest highlights the complexity of modelling mental health crises where the quantity of data in a given client file will tend to increase over time, the overall number of patients decreases which impacts the neural network. Considering neural networks based on text input tends to require more examples or training instances to perform adequately. Note too how the structured only xgboost is best at predicting crisis in the earliest stages with fewer than 10% of notes, but with 20% of weeks with available notes, the hybrid model’s performance jumps to match the unstructured offering a slight improvement on performance when compared the XGBoost alone which indicates that the addition of unstructured data helped the model make more accurate predictions across a range of thresholds, improving its overall discriminatory power.</p>
+<p><strong>AUROC Across 52 weeks:</strong></p>
+<p><img src="images/paste-4.png" class="img-fluid" alt="Figure: Model Accuracy"> <em>Figure 4. Performance of the Hybrid model compared to the unstructured and structured only models in predicting crisis episodes at 10 week intervals. Points and lines indicate mean and ± standard deviation values computed in the 52 weeks of the test set.</em></p>
 </section>
-<section id="performance-results" class="level2">
-<h2 class="anchored" data-anchor-id="performance-results">Performance Results</h2>
-<p>The best model performance using only structured data was an XGBoost model which is a tree-based classifier that implements gradient boosting. For the model with only unstructured data and the combined structured and unstructured data, the best model performance was a feedforward deep neural network (DNN).</p>
-<p><a href="images/paste-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/paste-2.png" class="img-fluid" width="350"></a></p>
-<p><strong>Provide an in-depth analysis of the performance results, and feel free to include diagrams or data directly from the paper.</strong></p>
-<p><a href="images/paste-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/paste-3.png" class="img-fluid" width="513"></a></p>
-<p><img src="images/paste-4.png" class="img-fluid" width="513"><!-- --></p>
-<ul>
-<li>Contrast the presented solution with other existing methods, focusing on its advantages and disadvantages. Reflect on what we’ve studied in class, making connections where relevant.</li>
-</ul>
+<section id="conclusion" class="level1">
+<h1><strong>Conclusion</strong></h1>
+<p>The study effectively demonstrated that incorporating unstructured data, such as clinical notes, alongside structured EHR data improved the ability to predict mental health crises. Their findings underscore the potential for including qualitative clinical information in predictive modeling and highlights a novel ensemble methodology that can be used to build a combined model that can effectively extract value from both data types. depening on what type is available.</p>
 </section>
-<section id="conclusions-and-further-work" class="level2">
-<h2 class="anchored" data-anchor-id="conclusions-and-further-work"><strong>Conclusions and Further Work:</strong></h2>
-<ul>
-<li><strong>Summarize the paper’s key takeaways and suggest potential areas for future research or exploration.</strong></li>
-</ul>
-
-</section>
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<section id="critical-analysis" class="level1">
+<h1><strong>Critical Analysis</strong></h1>
+<p>The paper offered a compelling case for the inclusion of unstructured data in predictive modeling, but there are several areas for improvement. Firstly, while the authors highlighted the potential benefits of unstructured data, the interpretability of their hybrid model remained limited. In class, we learned about techniques like Local Interpretable Model-agnostic Explanations (LIME) and SHapley Additive exPlanations (SHAP), which could be used to make the DNN’s predictions more interpretable. Incorporating such methods would make the model’s predictions more actionable for healthcare practitioners, who need clear explanations to make informed decisions.</p>
+<p>Future research could explore the generalizability of these findings to other domains within healthcare. In particular, in my own research I am wondering how this method could be used to predict case complexity to caseload management. and refine <span class="citation" data-cites="garriga2023">Garriga et al. (<a href="#ref-garriga2023" role="doc-biblioref">2023</a>)</span> ’s approach to make the integration of unstructured data more interpretable. Another potential direction was improving methods for natural language processing (NLP) to better extract meaningful insights from clinical notes, which could further enhance predictive performance.</p>
+<p>I especially liked their inclusion of SHAP values and analyses of variables that contributed most to model predictions–TALK MORE ABOUT THIS.</p>
+<p>Secondly, the study primarily focused on a single health system, which might limit the generalizability of the results. Future studies should consider multi-site evaluations to determine if the predictive power of these models held in different settings with varied data quality and clinical practices.</p>
+<p>Lastly, while the results were promising, they relied heavily on high-quality, well-documented clinical notes. In practice, the quality of clinical notes could vary significantly, and the models’ reliance on unstructured data could lead to inconsistencies in predictions if the notes were incomplete or ambiguous.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-garriga2023" class="csl-entry" role="listitem">
 Garriga, Roger, Teodora Sandra Buda, João Guerreiro, Jesús Omaña Iglesias, Iñaki Estella Aguerri, and Aleksandar Matić. 2023. <span>“Combining Clinical Notes with Structured Electronic Health Records Enhances the Prediction of Mental Health Crises.”</span> <em>Cell Reports Medicine</em> 4 (11). <a href="https://doi.org/10.1016/j.xcrm.2023.101260">https://doi.org/10.1016/j.xcrm.2023.101260</a>.
 </div>
-</div></section></div></main>
-<!-- /main column -->
-<script id="quarto-html-after-body" type="application/javascript">
+</div>
+</section>
+     </main>
+<!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -623,42 +686,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-</div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
+</script>  </div> <!-- /content --> 
   
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
-
-
-
-
 </body></html>
