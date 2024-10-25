@@ -1,5 +1,5 @@
 ---
-title: Deep Learning Paper Review
+title: "CPSC-5616: Deep Learning Paper Review"
 toc: true
 authors:
   - name: Shauna Heron
