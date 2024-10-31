@@ -1,8 +1,66 @@
 ---
-title: "Untitled"
+title: "Combining Structured & Unstructured Data"
+subtitle: "Enhances Prediction of Mental Health Crisis"
 format: revealjs
+theme: simple
 ---
 
-This is a test
+## Introduction & TOC
+
+
+
+## Problem
+
+-   Global rise in demand for mental health services coinciding with significant resource challenges
+
+-   In Ontario, 90% increase in mental health conditions requiring hospitalization–many of which might have been prevented with early intervention
+
+-   Underscores the need for a tool that supports clinical decision making by anticipating crisis relapse
+
+## Solution: A hybrid time-series model
+
+-   Prior work looked at utilizing structured data to model acute events like suicide or substance use relapse
+
+-   Continuous prediction of crisis–across related disorders–using a combination of data was a novel idea
+
+<!-- -->
+
+-   What if we could combine unstructured and structured EMHR to predict crisis events?
+
+## Structured vs unstructured data
+
+Structured = tabular data
+
+Unstructured = clinical notes
+
+## Electronic health data - challenges
+
+-   Sparseness
+
+-   Nested structure - interdependencies
+
+-   Multicollinearity
+
+-   Missing data both at random and systematically
+
+-   Data quality / mistakes
+
+-   Subjective nature of MH data
+
+-   Concept of structured versus unstructured data
+
+## Methodology
+
+![](images/paste-1.png)
+
+## Results
+
+![](images/paste-4.png)
+
+## Critical analyses
 
 ![](images/paste-5.png)
+
+-   compelling case for inclusion of unstructured data when modeling EHR using a hybrid ensemble approach
+
+-   The scores tells us that while the model can identify crises better than random guessing, the model may still flag many non-crisis events that could potentially overburden clinicians [\[1\]](http://localhost:7085/?quartoPreviewReqId=1730374746756&quartoPreviewThemeCategory=dark#ref-garriga2023). A more thorough discussion of the model’s threshold for clinical utility would have been good to see and is perhaps in the works. In their earlier study they conducted a post-hoc cohort study to examine clinical utility in everyday practice which would have been nice to see here too

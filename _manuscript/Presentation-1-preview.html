@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-    <title>Untitled</title>
+    <title>Combining Structured &amp; Unstructured Data</title>
     <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -137,7 +137,7 @@
     <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
       
       <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
-      <h6><i class="bi bi-journal-code"></i> Untitled</h6>
+      <h6><i class="bi bi-journal-code"></i> Combining Structured &amp; Unstructured Data</h6>
 
             <a href="./Presentation-1.qmd" class="btn btn-primary quarto-download-embed" download="Presentation-1.qmd">Download Source</a>
           </div>
@@ -145,7 +145,8 @@
      <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Untitled</h1>
+      <h1 class="title">Combining Structured &amp; Unstructured Data</h1>
+            <p class="subtitle lead">Enhances Prediction of Mental Health Crisis</p>
           </div>
 
     
@@ -169,14 +170,80 @@
     </div>  </div>
 </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-toc" id="toc-introduction-toc" class="nav-link active" data-scroll-target="#introduction-toc">Introduction &amp; TOC</a></li>
+  <li><a href="#problem" id="toc-problem" class="nav-link" data-scroll-target="#problem">Problem</a></li>
+  <li><a href="#solution-a-hybrid-time-series-model" id="toc-solution-a-hybrid-time-series-model" class="nav-link" data-scroll-target="#solution-a-hybrid-time-series-model">Solution: A hybrid time-series model</a></li>
+  <li><a href="#structured-vs-unstructured-data" id="toc-structured-vs-unstructured-data" class="nav-link" data-scroll-target="#structured-vs-unstructured-data">Structured vs unstructured data</a></li>
+  <li><a href="#electronic-health-data---challenges" id="toc-electronic-health-data---challenges" class="nav-link" data-scroll-target="#electronic-health-data---challenges">Electronic health data - challenges</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#critical-analyses" id="toc-critical-analyses" class="nav-link" data-scroll-target="#critical-analyses">Critical analyses</a></li>
+  </ul>
+</nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-     <p>This is a test</p>
-<p><a href="images/paste-5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/paste-5.png" class="img-fluid"></a></p>
+       <section id="introduction-toc" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-toc">Introduction &amp; TOC</h2>
+</section>
+<section id="problem" class="level2">
+<h2 class="anchored" data-anchor-id="problem">Problem</h2>
+<ul>
+<li><p>Global rise in demand for mental health services coinciding with significant resource challenges</p></li>
+<li><p>In Ontario, 90% increase in mental health conditions requiring hospitalization–many of which might have been prevented with early intervention</p></li>
+<li><p>Underscores the need for a tool that supports clinical decision making by anticipating crisis relapse</p></li>
+</ul>
+</section>
+<section id="solution-a-hybrid-time-series-model" class="level2">
+<h2 class="anchored" data-anchor-id="solution-a-hybrid-time-series-model">Solution: A hybrid time-series model</h2>
+<ul>
+<li><p>Prior work looked at utilizing structured data to model acute events like suicide or substance use relapse</p></li>
+<li><p>Continuous prediction of crisis–across related disorders–using a combination of data was a novel idea</p></li>
+</ul>
+<!-- -->
+<ul>
+<li>What if we could combine unstructured and structured EMHR to predict crisis events?</li>
+</ul>
+</section>
+<section id="structured-vs-unstructured-data" class="level2">
+<h2 class="anchored" data-anchor-id="structured-vs-unstructured-data">Structured vs unstructured data</h2>
+<p>Structured = tabular data</p>
+<p>Unstructured = clinical notes</p>
+</section>
+<section id="electronic-health-data---challenges" class="level2">
+<h2 class="anchored" data-anchor-id="electronic-health-data---challenges">Electronic health data - challenges</h2>
+<ul>
+<li><p>Sparseness</p></li>
+<li><p>Nested structure - interdependencies</p></li>
+<li><p>Multicollinearity</p></li>
+<li><p>Missing data both at random and systematically</p></li>
+<li><p>Data quality / mistakes</p></li>
+<li><p>Subjective nature of MH data</p></li>
+<li><p>Concept of structured versus unstructured data</p></li>
+</ul>
+</section>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<p><a href="images/paste-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/paste-1.png" class="img-fluid"></a></p>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p><a href="images/paste-4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/paste-4.png" class="img-fluid"></a></p>
+</section>
+<section id="critical-analyses" class="level2">
+<h2 class="anchored" data-anchor-id="critical-analyses">Critical analyses</h2>
+<p><a href="images/paste-5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/paste-5.png" class="img-fluid"></a></p>
+<ul>
+<li><p>compelling case for inclusion of unstructured data when modeling EHR using a hybrid ensemble approach</p></li>
+<li><p>The scores tells us that while the model can identify crises better than random guessing, the model may still flag many non-crisis events that could potentially overburden clinicians&nbsp;<a href="http://localhost:7085/?quartoPreviewReqId=1730374746756&amp;quartoPreviewThemeCategory=dark#ref-garriga2023">[1]</a>. A more thorough discussion of the model’s threshold for clinical utility would have been good to see and is perhaps in the works. In their earlier study they conducted a post-hoc cohort study to examine clinical utility in everyday practice which would have been nice to see here too</p></li>
+</ul>
+</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -597,7 +664,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
